@@ -13,10 +13,13 @@ module.exports  = sequelize.define("user.js",{
         allowNull:false,
         unique: true,
     },
+    numero: {
+        type: Sequelize.NUMBER()
+    },
     name: Sequelize.STRING(300),
     prenom: Sequelize.STRING(300),
     age: Sequelize.INTEGER(11),
     password: Sequelize.STRING(300),
     matricule: Sequelize.STRING(225),
-    numero: Sequelize.NUMBER()
+    
 })

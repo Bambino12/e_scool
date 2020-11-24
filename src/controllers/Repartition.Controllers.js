@@ -1,11 +1,11 @@
 const bcrypt =require('bcrypt');
-const {User} =require('../models/relation');
+const {Repartition} =require('../models/relation');
 
-exports.UserQueries = class{
-    static setUser(data){
-        console.log(User)
+exports.RepartitionQueries = class{
+    static setRepartition(data){
+        console.log(Repartition)
         return new Promise(async(next)=>{
-            const user = await User.create({
+            const repartition = await Repartition.create({
                 name: 'Test',
                 prenom: 'kevin',
                 mail : 'test@testmail.com',
@@ -13,19 +13,19 @@ exports.UserQueries = class{
                 password:'salut le boss',
                 matricule:'VOLB10059401',
                 numero: 56056396,
-            }).then(user => {
-                console.log(user)
+            }).then(repartition => {
+                console.log(repartition)
                
             }).catch(function (e) {
                 console.log( 'ici sont les erreur =>',e)
             });
         })
     }
-    static getAllUser(){
+    static getAllRepartition(){
         return new Promise(async(next)=>{
-            const user = await User.findAll({
+            const repartition = await Repartition.findAll({
                
-            }).then(users => {
+            }).then(repartitions => {
                //traitement terminé...
             });
         })
@@ -33,23 +33,22 @@ exports.UserQueries = class{
   
 
 
-    static getUserById(data){
+    static getRepartitionById(data){
         return new Promise(async(next)=>{
-            const user= await  User.findById(id, {
+            const repartition= await  Repartition.findById(id, {
                 include: [{model: Model.Role}]
-            }).then(user => {
+            }).then(repartition => {
                
-                console.log(user.role.name);
+                console.log(repartition);
             });
         })
     }
    
-    static updateUser(data){
+    static updateRepartition(data){
         return new Promise(async(next)=>{
-            const user =  User.update(
-                {name: 'Numa'},
-                {where: {id: id}}
-        ).then(user => {
+            const repartition =  Repartition.update(
+             
+        ).then(repartition => {
             
         });
         })

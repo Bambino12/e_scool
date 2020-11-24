@@ -1,11 +1,11 @@
 const bcrypt =require('bcrypt');
-const {User} =require('../models/relation');
+const {Modalite} =require('../models/relation');
 
-exports.UserQueries = class{
-    static setUser(data){
-        console.log(User)
+exports.ModaliteQueries = class{
+    static setModalite(data){
+        console.log(modalite)
         return new Promise(async(next)=>{
-            const user = await User.create({
+            const modalite = await Modalite.create({
                 name: 'Test',
                 prenom: 'kevin',
                 mail : 'test@testmail.com',
@@ -13,19 +13,19 @@ exports.UserQueries = class{
                 password:'salut le boss',
                 matricule:'VOLB10059401',
                 numero: 56056396,
-            }).then(user => {
-                console.log(user)
+            }).then(modalite => {
+                console.log(modalite)
                
             }).catch(function (e) {
                 console.log( 'ici sont les erreur =>',e)
             });
         })
     }
-    static getAllUser(){
+    static getAllModalite(){
         return new Promise(async(next)=>{
-            const user = await User.findAll({
+            const modalite = await Modalite.findAll({
                
-            }).then(users => {
+            }).then(modalite => {
                //traitement terminé...
             });
         })
@@ -33,23 +33,22 @@ exports.UserQueries = class{
   
 
 
-    static getUserById(data){
+    static getModaliteById(data){
         return new Promise(async(next)=>{
-            const user= await  User.findById(id, {
+            const modalite= await  Modalite.findById(id, {
                 include: [{model: Model.Role}]
-            }).then(user => {
+            }).then(modalite => {
                
-                console.log(user.role.name);
+                console.log(modalite);
             });
         })
     }
    
-    static updateUser(data){
+    static updateModalite(data){
         return new Promise(async(next)=>{
-            const user =  User.update(
-                {name: 'Numa'},
-                {where: {id: id}}
-        ).then(user => {
+            const modalite =  Modalite.update(
+             
+        ).then(modalite => {
             
         });
         })

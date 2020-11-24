@@ -1,11 +1,10 @@
 const bcrypt =require('bcrypt');
-const {User} =require('../models/relation');
+const {Formation} =require('../models/relation');
 
-exports.UserQueries = class{
-    static setUser(data){
-        console.log(User)
+exports.FormationQueries = class{
+    static setFormation(data){
         return new Promise(async(next)=>{
-            const user = await User.create({
+            const formation = await Formation.create({
                 name: 'Test',
                 prenom: 'kevin',
                 mail : 'test@testmail.com',
@@ -13,19 +12,19 @@ exports.UserQueries = class{
                 password:'salut le boss',
                 matricule:'VOLB10059401',
                 numero: 56056396,
-            }).then(user => {
-                console.log(user)
+            }).then(Formation => {
+                console.log(formation)
                
             }).catch(function (e) {
                 console.log( 'ici sont les erreur =>',e)
             });
         })
     }
-    static getAllUser(){
+    static getAllFormation(){
         return new Promise(async(next)=>{
-            const user = await User.findAll({
+            const formation = await Formation.findAll({
                
-            }).then(users => {
+            }).then(formations => {
                //traitement terminé...
             });
         })
@@ -33,23 +32,22 @@ exports.UserQueries = class{
   
 
 
-    static getUserById(data){
+    static getFormationById(data){
         return new Promise(async(next)=>{
-            const user= await  User.findById(id, {
+            const formation= await  Formation.findById(id, {
                 include: [{model: Model.Role}]
-            }).then(user => {
+            }).then(formation => {
                
-                console.log(user.role.name);
+                console.log(formation);
             });
         })
     }
    
-    static updateUser(data){
+    static updateFormation(data){
         return new Promise(async(next)=>{
-            const user =  User.update(
-                {name: 'Numa'},
-                {where: {id: id}}
-        ).then(user => {
+            const formation =  Formation.update(
+            
+        ).then(formation => {
             
         });
         })

@@ -10,7 +10,7 @@ Formation.hasMany(User, {foreignKey:'user_id', as: 'users'})
 Modalite.hasMany(Formation,{ foreignKey: 'formation_id', as:'formations'});
 Repartition.hasMany(Formation,{ foreignKey: 'formation_id', as:'formations'});
 
-module.exports = User
-module.exports = Formation
-module.exports = Modalite
-module.exports = Repartition
+exports.User = User;
+exports.Formation = Formation
+exports.Modalite = Modalite
+exports.Repartition = Repartition

@@ -12,9 +12,10 @@ module.exports  = sequelize.define("users",{
         type:Sequelize.STRING(300),
         allowNull:false,
         unique: true,
-    },
-    numero: {
-        type: Sequelize.NUMBER()
+    },numero: {
+        type: Sequelize.INTEGER(11),
+        unique:true,
+        allowNull:false,
     },
     name: Sequelize.STRING(300),
     prenom: Sequelize.STRING(300),
@@ -22,4 +23,8 @@ module.exports  = sequelize.define("users",{
     password: Sequelize.STRING(300),
     matricule: Sequelize.STRING(225),
     
+},
+
+{
+    tableName: 'users', timestamps: false, underscored: false
 })

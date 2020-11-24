@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const{ UserQueries} = require('../../src/controllers/User.Controllers')
+const{ UserQueries} = require('../../src/controllers/User.Controllers');
  
 
 /* GET home page. */

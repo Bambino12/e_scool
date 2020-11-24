@@ -1,4 +1,5 @@
 const bcrypt =require('bcrypt');
+const { where } = require('sequelize/types');
 const {Repartition} =require('../models/relation');
 
 exports.RepartitionQueries = class{
@@ -46,12 +47,23 @@ exports.RepartitionQueries = class{
    
     static updateRepartition(data){
         return new Promise(async(next)=>{
-            const repartition =  Repartition.update(
-             
-        ).then(repartition => {
+            const repartition =  Repartition.update({
+                where:{
+                 id: data.id
+             }
+            }).then(repartition => {
             
         });
         })
+    }
+    static DelecteRepartition(data){
+        return new Promise(async(next)=>{
+            const repartition = await User.destroy({
+                where: {
+                  id: data.id
+                }
+              });
+        }) 
     }
   
 }

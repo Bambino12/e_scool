@@ -38,7 +38,6 @@ exports.UserQueries = class{
             const user= await  User.findById(id, {
                 include: [{model: Model.Role}]
             }).then(user => {
-               
                 console.log(user.role.name);
             });
         })
@@ -47,7 +46,6 @@ exports.UserQueries = class{
     static updateUser(data){
         return new Promise(async(next)=>{
             const user =  User.update(
-                {name: 'Numa'},
                 {where: {id: id}}
         ).then(user => {
             

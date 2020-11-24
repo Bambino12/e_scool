@@ -1,16 +1,87 @@
+* {
+  box-sizing: border-box;
+}
 body {
   padding: 0px;
   margin: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgba(5, 5, 5, 0.87);
+
 }
 
-a {
-  color: #00B7FF;
-}
-.navbar{
+.topbar{
   position: fixed;
   background-color: rgb(4, 4, 44);
-  height: 70px;
-  padding: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 15px;
+  padding-bottom: 2px;
+}
+
+.topbar nav {
+  float: left;
+}
+
+.topbar nav a {
+  color: #999999;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 45px;
+}
+
+.topbar nav a:hover, .topbar nav a.active {
+  color: rgba(50, 68, 109, 0.87)
+}
+
+.topbar .recherche {
+  float: right;
+}
+
+.hr{
+  clear: both;
   margin: 0px;
+  padding: 0px;
+}
+
+.main {
+  float: left;
+  background-color: #FFF;
+  width: calc(100% - 300px);
+}
+
+.sidebar {
+  float: right;
+  background-color: #FBFBFB;
+  background:  rgb(192, 192, 221);
+  width: 300px;
+  padding: 40px;
+
+}
+.sidebar-title {
+  font-size: 17px;
+  color: #000;
+  margin: 25px 0;
+}
+
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.sidebar a {
+  color: #999999;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline
+}
+
+.footer {
+  clear: both;  
 }

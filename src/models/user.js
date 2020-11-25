@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/connection');
+const { Formation } = require('./relation');
 
 module.exports  = sequelize.define("users",{
     id:{
@@ -22,7 +23,12 @@ module.exports  = sequelize.define("users",{
     age: Sequelize.INTEGER(11),
     password: Sequelize.STRING(300),
     matricule: Sequelize.STRING(225),
-    
+    formation_id: {
+        type: Sequelize.INTEGER(11),
+        references:{
+            models: Formation
+        }
+    }
 },
 
 {

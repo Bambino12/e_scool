@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/connection');
+const { User, Modalite, Repartition } = require('./relation');
 
 module.exports  = sequelize.define("formations",{
     id:{
@@ -22,5 +23,27 @@ module.exports  = sequelize.define("formations",{
     ressource_pedagogique: Sequelize.STRING(255),
     image:Sequelize.STRING(255),
     niveau: Sequelize.STRING(255),
-    prix: Sequelize.INTEGER(11),  
+    prix: Sequelize.INTEGER(11), 
+    user_id: {
+        type: Sequelize.INTEGER(11),
+        references:{
+            models: 'userss',
+            key:'id'
+        }
+    },
+    modalite_id: {
+        type: Sequelize.INTEGER(11),
+        references:{
+            models: 'modalitess',
+            key:'id'
+        }
+    },
+    repartition_id: {
+        type: Sequelize.INTEGER(11),
+        references:{
+            models: 'repartitionss',
+            key:'id',
+        }
+    }
+
 })

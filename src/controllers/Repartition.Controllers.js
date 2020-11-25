@@ -1,6 +1,4 @@
-const bcrypt =require('bcrypt');
-const { where } = require('sequelize/types');
-const {Repartition} =require('../models/relation');
+const { Repartitions } = require('../models/repartition');
 
 exports.RepartitionQueries = class{
     static setRepartition(data){

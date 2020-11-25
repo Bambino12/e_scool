@@ -1,9 +1,9 @@
 const bcrypt =require('bcrypt');
-const {User} =require('../models/relation');
+// const { User } = require('../models/user');
+const {User, Formation} =require('../models/relation');
 
 exports.UserQueries = class{
     static setUser(data){
-        console.log(User)
         return new Promise(async(next)=>{
             const user = await User.create({
                 name: 'Test',
@@ -24,9 +24,12 @@ exports.UserQueries = class{
     static getAllUser(){
         return new Promise(async(next)=>{
             const user = await User.findAll({
-               
+               where:{id:1},
+               include:[{model: users}]
             }).then(users => {
-               //traitement terminé...
+               console.log(users)
+            }).catch((e)=>{
+                console.log('voici erreur la:',e)
             });
         })
     }

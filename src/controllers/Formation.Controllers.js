@@ -1,19 +1,16 @@
 const bcrypt =require('bcrypt');
-const {Formation} =require('../models/relation');
+const {Formation, User} =require('../models/relation');
 
 exports.FormationQueries = class{
     static setFormation(data){
         return new Promise(async(next)=>{
             const formation = await Formation.create({
-                name: 'Test',
-                prenom: 'kevin',
-                mail : 'test@testmail.com',
-                age: 11,
-                password:'salut le boss',
-                matricule:'VOLB10059401',
-                numero: 56056396,
+                intitule:"c'est sa le cour",
+                teaser:'oui',
+                code:'oui',
+                user_id: 1
             }).then(Formation => {
-                console.log(formation)
+                console.log(Formation)
                
             }).catch(function (e) {
                 console.log( 'ici sont les erreur =>',e)
@@ -23,7 +20,7 @@ exports.FormationQueries = class{
     static getAllFormation(){
         return new Promise(async(next)=>{
             const formation = await Formation.findAll({
-               
+               include:[{model: User}]
             }).then(formations => {
                //traitement terminé...
             });

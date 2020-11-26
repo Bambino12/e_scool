@@ -20,7 +20,7 @@ exports.FormationQueries = class{
     static getAllFormation(){
         return new Promise(async(next)=>{
             const formation = await Formation.findAll({
-               include:[{model: User}]
+               include:[{model: 'users'}]
             }).then(formations => {
                //traitement terminé...
             });

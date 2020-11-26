@@ -9,30 +9,8 @@ module.exports = {
           autoIncrement: true,
           primaryKey:true   
       },
-      user_id: {
-        allowNull: false,
-        type: Sequelize.INTEGER(11),
-        references:{
-            model: 'users',
-            key:'id'
-        }
-      },
-      modalite_id: {
-        allowNull: false,
-        type: Sequelize.INTEGER(11),
-        references:{
-            model: 'modalites',
-            key:'id'
-        }
-      },
-      repartition_id: {
-        allowNull: false,
-          type: Sequelize.INTEGER,
-          references:{
-              model: 'repartitions',
-              key:'id',
-          }
-      },
+      modalite: Sequelize.STRING(255),
+      repartition:Sequelize.STRING(255),
       teaser: Sequelize.STRING(255),
       code: Sequelize.STRING(255),
       type: Sequelize.STRING(255),
@@ -49,12 +27,9 @@ module.exports = {
       niveau: Sequelize.STRING(255),
       prix: Sequelize.INTEGER(11), 
       createdAt: Sequelize.DATE,
-      updatedAt: Sequelize.DATE,  
-      
-      
+      updatedAt: Sequelize.DATE,        
   })
   },
-
   down: async (queryInterface, Sequelize) => {
     return queryInterface.dropTable("formations")
   }

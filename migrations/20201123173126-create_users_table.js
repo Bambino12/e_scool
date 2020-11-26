@@ -14,21 +14,14 @@ module.exports = {
           allowNull:false,
           unique: true,
       },
-      numero: {
-          type: Sequelize.INTEGER(11),
-          unique:true,
-          allowNull:false,
-      },
-      name: Sequelize.STRING(300),
-      prenom: Sequelize.STRING(300),
+      name: Sequelize.STRING(255),
+      prenom: Sequelize.STRING(255),
       age: Sequelize.INTEGER(11),
-      password: Sequelize.STRING(300),
-      matricule: Sequelize.STRING(225),
+      password: Sequelize.STRING(255),
       createdAt: Sequelize.DATE,
-      updatedAt: Sequelize.DATE,  
+      updatedAt: Sequelize.DATE, 
   })
   },
-
   down: async (queryInterface, Sequelize) => {
    return queryInterface.dropTable('users')
   }

@@ -9,6 +9,13 @@ module.exports  = sequelize.define("users",{
         autoIncrement: true,
         primaryKey:true   
     },
+    formation_id: {
+        type: Sequelize.INTEGER(11),
+        references:{
+            model: 'formations',
+            key: 'id',
+        }
+    },
     mail: {
         type:Sequelize.STRING(300),
         allowNull:false,
@@ -23,12 +30,7 @@ module.exports  = sequelize.define("users",{
     age: Sequelize.INTEGER(11),
     password: Sequelize.STRING(300),
     matricule: Sequelize.STRING(225),
-    formation_id: {
-        type: Sequelize.INTEGER(11),
-        references:{
-            models: Formation
-        }
-    }
+
 },
 
 {

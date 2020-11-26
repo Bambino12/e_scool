@@ -9,12 +9,17 @@ module.exports = {
           autoIncrement: true,
           primaryKey:true   
       },
-      intitule: Sequelize.STRING(255),
-      prix: Sequelize.INTEGER(11),
+      formationId:{
+        allowNull:false,
+        type:Sequelize.INTEGER(11),
+        references:{
+          model:'formations',
+          key:'id'
+        }
+      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
-      
-  });
+  })
  
   },
 

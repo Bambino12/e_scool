@@ -25,7 +25,7 @@ exports.UserQueries = class{
         return new Promise(async(next)=>{
             const user = await User.findAll({
                where:{id:1},
-               include:[{model: users}]
+               include:[{model: 'formations'}]
             }).then(users => {
                console.log(users)
             }).catch((e)=>{

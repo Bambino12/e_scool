@@ -7,7 +7,7 @@ module.exports  = sequelize.define("repartitions",{
         allowNull: false,
         autoIncrement: true,
         primaryKey:true   
-    },
+    }, 
     duree_CM: Sequelize.TIME,
     duree_TD: Sequelize.TIME,
     duree_TP: Sequelize.TIME,

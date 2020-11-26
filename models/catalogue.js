@@ -1,13 +1,21 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/connection');
 
-module.exports  = sequelize.define("modalites",{
+module.exports  = sequelize.define("offres",{
     id:{
         type:Sequelize.INTEGER(11),
         allowNull: false,
         autoIncrement: true,
         primaryKey:true   
     },
-    type_evaluation: Sequelize.STRING(255),
+    usersId:{
+        allowNull:true,
+        type:Sequelize.INTEGER(11),
+        references:{
+            model:'users',
+            key:'id'
+        }
+    }
     
-})
+},
+)

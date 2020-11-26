@@ -1,6 +1,4 @@
 const Formation = require("./formation");
-const Modalite = require("./modalite");
-const Repartition = require("./repartition");
 const User = require("./user");
 
 User.hasMany(Formation, {foreignKey:'user_id',as:'formations'});

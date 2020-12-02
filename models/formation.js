@@ -11,7 +11,7 @@ module.exports  = db.sequelize.define("formations",{
         allowNull: false,
         type:Sequelize.INTEGER(11),
         references:{
-            model:'',
+            model:'catalogues',
             key: 'id'
         }
     },

@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../database/connection');
+const sequelize = require('../src/database/connection');
 const { Formation } = require('./relation');
 
 module.exports  = sequelize.define("users",{
@@ -9,13 +9,7 @@ module.exports  = sequelize.define("users",{
         autoIncrement: true,
         primaryKey:true   
     },
-    formation_id: {
-        type: Sequelize.INTEGER(11),
-        references:{
-            model: 'formations',
-            key: 'id',
-        }
-    },
+    
     mail: {
         type:Sequelize.STRING(300),
         allowNull:false,

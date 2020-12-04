@@ -8,5 +8,9 @@ module.exports = sequelize.define("factures",{
         allowNull: false,
         autoIncrement: true,
         primarykey: true
-    }
+    },
+    prix_factur:{
+        allowNull:false,
+        type: Sequelize.INTEGER(11),
+    },
 })

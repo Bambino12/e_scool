@@ -9,22 +9,6 @@ module.exports = {
           autoIncrement: true,
           primaryKey:true   
       },
-      catalogue_id: {
-        allowNull:false,
-        type: Sequelize.INTEGER(11),
-        references:{
-            model:'catalogues',
-            key:'id'
-        }
-      },
-      admin_id: {
-        allowNull:false,
-        type: Sequelize.INTEGER(11),
-        references:{
-            model:'admins',
-            key:'id'
-        }
-      },
     modalite: Sequelize.STRING(255),
     repartition:Sequelize.STRING(255),
     teaser: Sequelize.STRING(255),

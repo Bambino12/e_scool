@@ -9,6 +9,10 @@ module.exports = {
           autoIncrement: true,
           primaryKey:true   
       },
+      prix_factur:{
+        allowNull:false,
+        type: Sequelize.INTEGER(11),
+      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE, 
   })

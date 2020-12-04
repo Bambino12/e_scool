@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/admin.css' />
+
     <title>Document</title>
 </head>
 <body>
     <header class="topbar">
         <nav class="navbar">
             <a href="#">Acueille</a>
-            <a href="#" class= "active">Inscription</a>
+            <a href="/users/register" class= "active">Inscription</a>
             <a href="#">Connection</a>
             <a href="#">Offres</a>
             <a href="#">Apropos</a>
@@ -24,30 +27,41 @@
         <hr class="hr">
     </header>
     <main class="main">
-
+      <div class="table-contener"> 
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        
     </main>
-    <aside class="sidebar">
-        <div class="" ></div>
-        <h4 class="sidebar-title"> Formation </h4>
-        <ul>
-            <li><a href="#">developpement d'aplication et e-service</a></li>
-            <li><a href="#"> Reseau et securité informatique</a></li>
-            <li><a href="#"> multimedia et are du numerique</a></li>
-            <li><a href="#"> base de donne </a></li>
-            <li><a href="#">communication digitale </a></li>
-        </ul>
-        <hr>
-        <h4 class="sidebar-title"> niveau d'etude </h4>
-        <ul>
-            <li><a href="#">Licence 1</a></li>
-            <li><a href="#">Licence 2</a></li>
-            <li><a href="#">Licence 3</a></li>
-            <li><a href="#">Master 1 </a></li>
-            <li><a href="#">Master 2 </a></li>
-        </ul>
-    </aside>
-    <footer class="footer">
-        crée par Kevin voli
-    </footer>
+  <script src="/javascripts/jquery-3.5.1.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

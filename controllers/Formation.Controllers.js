@@ -8,7 +8,7 @@ exports.FormationQueries = class{
                 intitule:"c'est sa le cour",
                 teaser:'oui',
                 code:'oui',
-                user_id: 1
+                prix:3000,
             }).then(Formation => {
                 console.log(Formation)
                
@@ -20,9 +20,10 @@ exports.FormationQueries = class{
     static getAllFormation(){
         return new Promise(async(next)=>{
             const formation = await Formation.findAll({
-               include:[{model: 'users'}]
             }).then(formations => {
-               //traitement terminé...
+               next(formations)
+            }).catch(e=>{
+                next(e)
             });
         })
     }

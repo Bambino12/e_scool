@@ -11,20 +11,14 @@ module.exports  = sequelize.define("users",{
     },
     
     mail: {
-        type:Sequelize.STRING(300),
+        type:Sequelize.STRING(30),
         allowNull:false,
         unique: true,
-    },numero: {
-        type: Sequelize.INTEGER(11),
-        unique:true,
-        allowNull:false,
     },
-    name: Sequelize.STRING(300),
-    prenom: Sequelize.STRING(300),
-    age: Sequelize.INTEGER(11),
-    password: Sequelize.STRING(300),
-    matricule: Sequelize.STRING(225),
-
+    name: Sequelize.STRING(30),
+    prenom: Sequelize.STRING(30),
+    password: Sequelize.STRING(30),
+    naissence_etud:Sequelize.STRING(30)
 },
 
 {

@@ -6,13 +6,10 @@ const { Formation } = require('../../models/relation');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  // UserQueries.setUser("saut")
-  // UserQueries.getAllUser()
-  
-  // FormationQueries.setFormation('salut')
-  FormationQueries.getAllFormation()
-  res.render('admin/index', { title: 'Express' });
+router.get('/', async(req, res, next) => {
+  let formation= await FormationQueries.getAllFormation()
+  console.log('liste des formation', formation)
+  res.render('admin/index', { page: 'admin',formations:formation });
 });
 
 module.exports = router;

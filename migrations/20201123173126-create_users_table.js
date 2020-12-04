@@ -10,14 +10,14 @@ module.exports = {
           primaryKey:true   
       },
       mail: {
-          type:Sequelize.STRING(300),
+          type:Sequelize.STRING(30),
           allowNull:false,
           unique: true,
       },
-      name: Sequelize.STRING(255),
-      prenom: Sequelize.STRING(255),
-      age: Sequelize.INTEGER(11),
-      password: Sequelize.STRING(255),
+      name: Sequelize.STRING(30),
+      prenom: Sequelize.STRING(30),
+      naissence_etud:Sequelize.STRING(30),
+      password: Sequelize.STRING(30),
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE, 
   })

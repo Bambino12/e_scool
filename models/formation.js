@@ -1,26 +1,11 @@
-const db = require('./index');
-const Sequelize = db.Sequelize
-module.exports  = db.sequelize.define("formations",{
+const Sequelize = require('sequelize');
+const sequelize = require('../src/database/connection');
+module.exports  = sequelize.define("formations",{
     id:{
         type:Sequelize.INTEGER(11),
         allowNull: false,
         autoIncrement: true,
         primaryKey:true   
-    },
-    catalogueId:{
-        allowNull: false,
-        type:Sequelize.INTEGER(11),
-        references:{
-            model:'catalogues',
-            key: 'id'
-        }
-    },
-    adminId: {
-        type: Sequelize.INTEGER(11),
-        references:{
-            model: 'catalogues',
-            key: 'id',
-        }
     },
     teaser: Sequelize.STRING(255),
     code: Sequelize.STRING(255),

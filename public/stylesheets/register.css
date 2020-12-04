@@ -1,0 +1,15 @@
+.register{
+    margin-top: 100px;
+}
+.form-contener{
+    margin: auto;
+    width: 400px;
+    background-color: gainsboro;
+    padding: 20px;
+
+}
+.form-contener .input-contener{
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+}

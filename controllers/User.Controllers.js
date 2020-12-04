@@ -6,18 +6,15 @@ exports.UserQueries = class{
     static setUser(data){
         return new Promise(async(next)=>{
             const user = await User.create({
-                name: 'Test',
-                prenom: 'kevin',
-                mail : 'test@testmail.com',
-                age: 11,
-                password:'salut le boss',
-                matricule:'VOLB10059401',
-                numero: 56056396,
+                name: data.name,
+                prenom: data.prenom,
+                mail : data.mail,
+                password:data.password,
+                naissence_etud: data.naissence_etud
             }).then(user => {
-                console.log(user)
-               
+                next(user.dataValues)
             }).catch(function (e) {
-                console.log( 'ici sont les erreur =>',e)
+                next(e)
             });
         })
     }

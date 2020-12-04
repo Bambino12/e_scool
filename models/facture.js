@@ -7,10 +7,14 @@ module.exports = sequelize.define("factures",{
         type:Sequelize.INTEGER(11),
         allowNull: false,
         autoIncrement: true,
-        primarykey: true
+        primaryKey:true   
     },
     prix_factur:{
         allowNull:false,
         type: Sequelize.INTEGER(11),
     },
-})
+},
+{
+    tableName: 'factures', timestamps: false, underscored: false
+}
+)

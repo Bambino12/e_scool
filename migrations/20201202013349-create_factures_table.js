@@ -13,6 +13,14 @@ module.exports = {
         allowNull:false,
         type: Sequelize.INTEGER(11),
       },
+      users_id: {
+        allowNull:false,
+        type: Sequelize.INTEGER(11),
+        references:{
+            model:'users',
+            key:'id'
+        }
+    },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE, 
   })

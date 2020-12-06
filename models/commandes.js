@@ -14,7 +14,7 @@ module.exports = sequelize.define("ligneCommandes",{
         type: Sequelize.INTEGER(11),
         allowNull:false,
     },
-    commandeId: {
+    factureId: {
         allowNull:false,
         type: Sequelize.INTEGER(11),
         references:{

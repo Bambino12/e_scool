@@ -7,6 +7,14 @@ module.exports  = sequelize.define("formations",{
         autoIncrement: true,
         primaryKey:true   
     },
+    univercite_id: {
+        allowNull:false,
+        type: Sequelize.INTEGER(11),
+        references:{
+            model:'univercites',
+            key:'id'
+        }
+    },
     teaser: Sequelize.STRING(255),
     code: Sequelize.STRING(255),
     type: Sequelize.STRING(255),

@@ -1,11 +1,14 @@
 const Formation = require("./formation");
 const User = require("./user");
 const Facture = require('./facture');
-const Payer = require("./payer");
+const Commandes = require("./commandes");
+const Univercite = require("./univercite");
 
-User.hasMany(Payer, {foreignKey:'user_id',as:'payers'});
-Formation.hasMany(Payer, {foreignKey:'formation_id', as: 'payers'})
-Facture.hasMany(Payer, {foreignKey:'facture_id', as: 'payers'})
 
+User.hasMany(Facture, {foreignKey:'user_id',as:'facture'});
+Formation.belongsToMany(Facture, {foreignKey:'formation_id',through:Commandes});
+Facture.belongsToMany(Formation, {foreignKey:'facture_id',through:Commandes});
+Univercite.hasMany(Formation,{foreignKey:'univercite_id',as:'formations'})
 exports.User = User;
 exports.Formation = Formation;
+exports.Univercite = Univercite

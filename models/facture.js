@@ -13,6 +13,18 @@ module.exports = sequelize.define("factures",{
         allowNull:false,
         type: Sequelize.INTEGER(11),
     },
+    moyen_pai:{
+        allowNull:false,
+        type: Sequelize.INTEGER(11)
+    },
+    user_id: {
+        allowNull:false,
+        type: Sequelize.INTEGER(11),
+        references:{
+            model:'commandes',
+            key:'id'
+        }
+    },
 },
 {
     tableName: 'factures', timestamps: false, underscored: false

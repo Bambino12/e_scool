@@ -8,6 +8,7 @@ module.exports = {
           autoIncrement: true,
           primaryKey:true   
       },
+    niveau:Sequelize.STRING(255),
     modalite: Sequelize.STRING(255),
     repartition:Sequelize.STRING(255),
     teaser: Sequelize.STRING(255),

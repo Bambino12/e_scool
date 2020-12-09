@@ -13,10 +13,9 @@ module.exports = sequelize.define("factures",{
         allowNull:false,
         type: Sequelize.INTEGER(11),
     },
-    moyen_pai:{
-        allowNull:false,
-        type: Sequelize.INTEGER(11)
-    },
+    mode_paie:{
+        type:Sequelize.STRING(30),
+      },
     user_id: {
         allowNull:false,
         type: Sequelize.INTEGER(11),

@@ -13,6 +13,10 @@ module.exports = sequelize.define("univercites",{
         allowNull: false,
         type: Sequelize.STRING(30)
     },
+    ufr:{
+        allowNull: false,
+        type: Sequelize.STRING(30)
+    },
 
 },
 {

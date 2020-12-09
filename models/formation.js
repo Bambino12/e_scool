@@ -15,6 +15,7 @@ module.exports  = sequelize.define("formations",{
             key:'id'
         }
     },
+    niveau:Sequelize.STRING(255),
     teaser: Sequelize.STRING(255),
     code: Sequelize.STRING(255),
     type: Sequelize.STRING(255),

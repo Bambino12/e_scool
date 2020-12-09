@@ -14,6 +14,10 @@ module.exports = {
             allowNull: false,
             type: Sequelize.STRING(30)
         },
+        ufr:{
+          allowNull: false,
+          type: Sequelize.STRING(30)
+        },
         createdAt: Sequelize.DATE,
         updatedAt: Sequelize.DATE, 
     });
@@ -21,8 +25,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
- 
-    queryInterface.dropTable('univercites');
-   
+    queryInterface.dropTable('univercites'); 
   }
 };

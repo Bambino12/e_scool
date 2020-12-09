@@ -20,7 +20,10 @@ module.exports = {
             model:'users',
             key:'id'
         }
-    },
+      },
+      mode_paie:{
+        type:Sequelize.STRING(30),
+      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE, 
   })

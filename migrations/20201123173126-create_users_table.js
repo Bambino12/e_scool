@@ -14,6 +14,7 @@ module.exports = {
           allowNull:false,
           unique: true,
       },
+      niveau:Sequelize.STRING(30),
       name: Sequelize.STRING(30),
       prenom: Sequelize.STRING(30),
       naissence_etud:Sequelize.STRING(30),

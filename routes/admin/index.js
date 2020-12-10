@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 const{ UserQueries} = require('../../controllers/User.Controllers');
 const { FormationQueries } = require('../../controllers/Formation.Controllers');
-const { Formation } = require('../../models/relation');
+const { Formation, Facture } = require('../../models/relation');
 const { UniverciteQuery } = require('../../controllers/Univercite.Coontrollers');
+const { FactureQueries } = require('../../controllers/facture.Controllers');
 
 const nav= {}
 nav.formation= 'formation';
@@ -53,29 +54,54 @@ router.get('/detail/:id',(req,res,next)=>{
     UniverciteQuery.getUniverciteById(req.params.id)
     res.render('admin/detail')
 })
+// FIN ROUTER UNIVERCITE
+
+// DEBUT ROUTE FORMATION
+
 router.get('/formation', async(req,res,next)=>{
   let formation= await FormationQueries.getAllFormation()
+  console.log(formation)
   res.render('admin/formation',{page:'formation',formations:formation ,lienP:lienP,nav:nav})
 })
 router.get('/formation/detail/:id',async(req,res,next)=>{
   let formation = await FormationQueries.getFormationById(id)
 })
+router.get('/formation/update/:id', async(req,res,next)=>{
+  let data = req.body
+  data.id = req.params.id
+  let formations = await FormationQueries.updateFormation(data)
+  res.render('formation/addFormation',{lienP:lienP,nav:nav,page: 'admin',formations:formations})
+})
+router.post('/formation/update/:id')
 router.post('/formation/add', async(req,res,next)=>{
+  
+  let data= req.body
   let formation= await FormationQueries.setFormation(data)
+  res.redirect('/formation/add',)
 })
 router.get('/formation/add', async(req,res,next)=>{
-  res.render('admin/addFormation')
+  let univercite= await UniverciteQuery.getAllUnivercite()
+  res.render('admin/addFormation',{lienP:lienP,nav:nav,page: 'admin', univecites:univercite})
 })
+// FIN ROUTER FORMATION
 
-router.delete('/formation/delete/:id')
-router.put('/formation/update/:id')
 
-router.get('/listeUsers')
-router.get('/listeUsers/detail/:id')
 
+
+// DEBUT ROUTE USER
+router.get('/users',async(req,res,next)=>{
+  let User= await UserQueries.getAllUser()
+  res.render('admin/users',{lienP:lienP,nav:nav,Users:User,page: 'admin'})
+})
+// FIN
+
+
+
+// DEBUT ROUTER FACTURE
 router.get('/facture',async(req,res,next)=>{
-  res.render('/admin/facture')
+  let facture = await FactureQueries.getAllFacture()
+  res.render('admin/facture',{lienP:lienP,nav:nav,page: 'admin'})
 })
-router.get('/listFacture/detail/:id')
+// FIN
 
 module.exports = router;

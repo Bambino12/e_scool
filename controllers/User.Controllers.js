@@ -21,12 +21,12 @@ exports.UserQueries = class{
     static getAllUser(){
         return new Promise(async(next)=>{
             const user = await User.findAll({
-               where:{id:1},
-               include:[{model: 'formations'}]
             }).then(users => {
                console.log(users)
+               next(users)
             }).catch((e)=>{
                 console.log('voici erreur la:',e)
+                next(e)
             });
         })
     }
@@ -39,6 +39,7 @@ exports.UserQueries = class{
                 include: [{model: Model.Role}]
             }).then(user => {
                 console.log(user.role.name);
+                next(user)
             });
         })
     }
@@ -48,7 +49,7 @@ exports.UserQueries = class{
             const user =  User.update(
                 {where: {id: id}}
         ).then(user => {
-            
+            next(user)
         });
         })
     }

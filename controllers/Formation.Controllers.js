@@ -5,15 +5,16 @@ exports.FormationQueries = class{
     static setFormation(data){
         return new Promise(async(next)=>{
             const formation = await Formation.create({
-                intitule:"c'est sa le cour",
-                teaser:'oui',
-                code:'oui',
-                prix:3000,
-            }).then(Formation => {
-                console.log(Formation)
-               
+                intitule:data.intitule,
+                teaser:data.teaser,
+                code:data.code,
+                prix:data.prix,
+            }).then(formation => {
+                console.log(formation)
+               next(formation)
             }).catch(function (e) {
                 console.log( 'ici sont les erreur =>',e)
+                next(e)
             });
         })
     }
